@@ -1,10 +1,11 @@
+import HeroSection from "@/components/ui/landing-page/hero-section";
+
 
 
 export default function Home() {
   return (
     <div>
-      <h1 className="">Hello Next.js</h1>
-      
+      <HeroSection/>
     </div>
   );
 }

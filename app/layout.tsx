@@ -5,7 +5,7 @@ import "./globals.css";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "iBuiltThis",
+  title: "iBuiltThis - Share Your Creations, Discover New Ideas",
   description: "iBuiltThis is a platform for building and sharing your own projects with the world.",
 };
 
