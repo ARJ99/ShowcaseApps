@@ -1,9 +1,10 @@
 
 import { ArrowRightIcon, EyeIcon, RocketIcon, SparkleIcon, UserIcon } from "lucide-react"
-import { Badge } from "../badge"
-import { Button } from "../button"
+
 import Link from "next/link"
 import StatsCard from "./stats-card"
+import { Badge } from "../ui/badge"
+import { Button } from "../ui/button"
 
 
 const LiveBadge = () => {
@@ -45,7 +46,7 @@ export default function HeroSection() {
 
             <div className="wrapper">
 
-                <div className="flex flex-col items-center justify-center">
+                <div className="flex flex-col items-center justify-center lg:py-24 py-12 text-center">
                     <LiveBadge />
                     <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-5xl">Share What You&apos;ve Built, Discover What&apos;s Launching</h1>
                     <p className="text-lg sm:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
@@ -53,7 +54,7 @@ export default function HeroSection() {
                         Authentic launches, real builders, genuine feedback.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 ">
+                    <div className="flex flex-col sm:flex-row gap-4 mb-16">
                         <Button
                             asChild
                             size="lg"
