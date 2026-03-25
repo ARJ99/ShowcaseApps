@@ -1,6 +1,7 @@
 import { CompassIcon, Home, SparkleIcon, UserIcon } from "lucide-react"
 import Link from "next/link"
 import { Button } from "../ui/button";
+import { Show, SignIn, SignInButton, SignUp, SignUpButton, UserButton } from "@clerk/nextjs";
 
 
 const Logo = () => {
@@ -18,7 +19,7 @@ const Logo = () => {
 
 export default function Header() {
 
-    const isSignedIn = true;
+    const isSignedIn = false;
 
     return (
         <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -49,13 +50,23 @@ export default function Header() {
                                 </Button>
                                 {/* Clerk User */}
                                 <Button variant="ghost" className="rounded-2xl">
-                                    <UserIcon className="size-4"/>
+                                    <UserIcon className="size-4" />
                                 </Button>
                             </>
                         ) : (
                             <>
-                                <Button variant="ghost">Sign In</Button>
-                                <Button> Sign Up</Button>
+                                <Show when="signed-out">
+                                    <SignInButton>
+                                        <button className="bg-foreground/80 text-background rounded-full font-medium text-sm  sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">Sign in</button>
+                                    </SignInButton>
+                                    <SignUpButton>
+                                        <button className="bg-primary  rounded-full font-medium text-sm  sm:text-base h-10 sm:h-12 px-4 sm:px-5 cursor-pointer">Sign up</button>
+                                    </SignUpButton>
+                                        
+                                </Show>
+                                <Show when="signed-in">
+                                    <UserButton />
+                                </Show>
                             </>
                         )}
                     </div>
