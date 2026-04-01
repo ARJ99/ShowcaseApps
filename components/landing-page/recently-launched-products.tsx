@@ -1,7 +1,7 @@
 
 import { CalendarIcon, RocketIcon } from "lucide-react";
 import SectionHeader from "../common/section-header";
-import ProductCard from "../products/ProductCard";
+import ProductCard from "../products/product-card";
 import EmptyState from "../common/empty-state";
 import { getRecentlyLaunchedProducts } from "@/lib/products/product-select";
 

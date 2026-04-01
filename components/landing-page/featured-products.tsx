@@ -3,7 +3,7 @@ import SectionHeader from "@/components/common/section-header";
 import { ArrowUpRightIcon, StarIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
-import ProductCard from "../products/ProductCard";
+import ProductCard from "../products/product-card";
 import { getFeaturedProducts } from "@/lib/products/product-select";
 
 // const featuredProducts = [
