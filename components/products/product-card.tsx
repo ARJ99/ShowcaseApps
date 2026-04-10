@@ -24,7 +24,7 @@ export default function ProductCard({ ...product }: Product) {
 
     const hasVoted = false;
     return (
-        <Link href={`/products/${product.id}`}>
+        <Link href={`/products/${product.slug}`}>
 
             <Card className="group card-hover hover:bg-primary-foreground/10 border-solid border-gray-400 min-h-[200px]">
                 <CardHeader className="flex-1">

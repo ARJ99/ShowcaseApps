@@ -3,6 +3,7 @@ import { products } from "@/db/schema";
 import { cacheLife } from "next/cache";
 import { desc, eq } from "drizzle-orm";
 import { connection } from "next/server";
+import { string } from "zod";
 
 export async function getFeaturedProducts() {
     "use cache";
@@ -47,4 +48,11 @@ export async function getRecentlyLaunchedProducts() {
             product.createdAt &&
             new Date(product.createdAt.toISOString()) >= oneWeekAgo
     );
+}
+
+export async function getProductBySlug(slug: string) {
+    "use cache"
+    const product = await db.select().from(products).where(eq(products.slug, slug));
+
+    return product?.[0] ?? null;
 }
