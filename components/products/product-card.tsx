@@ -4,23 +4,11 @@ import { Badge } from "../ui/badge"
 import { ChevronDownIcon, ChevronUpIcon, StarIcon } from "lucide-react"
 import { Button } from "../ui/button"
 import { cn } from "@/lib/utils"
-import { products } from "@/db/schema"
-import { InferSelectModel } from "drizzle-orm"
+
 import VotingButtons from "./voting-button"
+import { ProductType } from "@/types"
 
-
-// interface Product {
-//     id: number,
-//     name: string,
-//     description: string,
-//     tags: string[],
-//     votes: number,
-//     isFeatured: boolean
-// }
-
-type Product = InferSelectModel<typeof products>
-
-export default function ProductCard({ ...product }: Product) {
+export default function ProductCard({ ...product }: ProductType) {
 
     const hasVoted = false;
     return (
