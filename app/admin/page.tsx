@@ -1,11 +1,13 @@
 
-import { AdminProductCard } from "@/components/admin/admin-product-card";
+
+import AdminProductCard from "@/components/admin/admin-product-card";
 import { StatsCard } from "@/components/admin/stats-card";
+import EmptyState from "@/components/common/empty-state";
 import SectionHeader from "@/components/common/section-header";
 import { getAllApprovedProducts, getAllProducts } from "@/lib/products/product-select";
 
 import { auth, clerkClient } from "@clerk/nextjs/server"
-import { ShieldIcon } from "lucide-react";
+import { InboxIcon, ShieldIcon } from "lucide-react";
 
 import { redirect } from "next/navigation";
 
@@ -56,19 +58,19 @@ export default async function AdminPage() {
                         </h2>
                     </div>
                     <div className="space-y-4">
-                        {/* {pendingProducts.length === 0 && (
+                        {pendingProducts.length === 0 && (
                             <EmptyState
                                 message="No pending products to review"
                                 icon={InboxIcon}
                             />
-                        )} */}
+                        )}
                         {pendingProducts.map((product) => (
-                            <AdminProductCard  />
+                            <AdminProductCard key={product.id} product={product} />
                         ))}
                     </div>
                 </section>
 
-                {/* <section className="my-12">
+                <section className="my-12">
                     <div className="section-header-with-count">
                         <h2 className="text-2xl font-bold">All Products</h2>
                     </div>
@@ -77,7 +79,7 @@ export default async function AdminPage() {
                             <AdminProductCard key={product.id} product={product} />
                         ))}
                     </div>
-                </section> */}
+                </section>
 
             </div>
         </div>
