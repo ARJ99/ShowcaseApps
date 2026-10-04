@@ -3,7 +3,7 @@ import { products } from "@/db/schema";
 import { cacheLife } from "next/cache";
 import { desc, eq } from "drizzle-orm";
 import { connection } from "next/server";
-import { string } from "zod";
+
 
 export async function getFeaturedProducts() {
     "use cache";
@@ -19,7 +19,7 @@ export async function getFeaturedProducts() {
 }
 
 export async function getAllApprovedProducts() {
-    
+
     const productsData = await db
         .select()
         .from(products)
